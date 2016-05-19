@@ -10,11 +10,15 @@ public class EZPZDao {
 
 
 	public static Connection readDataBase() throws Exception {
+		String pass = System.getenv("DATABASE_PASSWORD");
+		String url = System.getenv("DATABASE_URL_PARAMS");
+		String user = System.getenv("DATABASE_USERNAME");
+		
 		//Class.forName("com.mysql.jdbc.Driver");
 		//Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/ezpz", "root", "sesame");
 		Class.forName("org.postgresql.Driver");
 		//Connection connect = DriverManager.getConnection("jdbc:postgresql://ec2-54-235-221-102.compute-1.amazonaws.com:5432/de3h0jbprur7d8?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory", "bctthbkxfsapcr", "vAik0XnXrICB1SMxcCZOUQTF1L");
-		Connection connect = DriverManager.getConnection("jdbc:postgresql://ec2-54-235-221-102.compute-1.amazonaws.com:5432/de3h0jbprur7d8", "bctthbkxfsapcr", "vAik0XnXrICB1SMxcCZOUQTF1L");
+		Connection connect = DriverManager.getConnection(url, user, pass);
 		
 		return connect;
 	}
