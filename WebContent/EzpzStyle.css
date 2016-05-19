@@ -1,0 +1,85 @@
+@CHARSET "ISO-8859-1";
+
+#header {
+    
+    color:white;
+    text-align:center;
+    padding:5px;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}
+
+h1 {
+	text-align: center;
+	color: #408080; 
+	font-family: "Great Vibes", cursive; 
+	font-size: 100px; 
+	line-height: 130px; 
+	font-weight: normal; 
+	margin-bottom: 0px; 
+	margin-top: 10px; 
+	text-shadow: 0 1px 1px #fff; 
+	
+}
+
+body {
+    background-image: url("images/blackbeantaco.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+
+
+table {
+    
+    border: 4px solid black;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    width: 300px;
+    margin: 200px auto;
+    text-align: center;
+    color: black;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}
+
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
+
