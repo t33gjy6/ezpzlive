@@ -10,8 +10,11 @@ public class EZPZDao {
 
 
 	public static Connection readDataBase() throws Exception {
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/ezpz", "root", "sesame");
+		//Class.forName("com.mysql.jdbc.Driver");
+		//Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/ezpz", "root", "sesame");
+		Class.forName("org.postgresql.Driver");
+		//Connection connect = DriverManager.getConnection("jdbc:postgresql://ec2-54-235-221-102.compute-1.amazonaws.com:5432/de3h0jbprur7d8?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory", "bctthbkxfsapcr", "vAik0XnXrICB1SMxcCZOUQTF1L");
+		Connection connect = DriverManager.getConnection("jdbc:postgresql://ec2-54-235-221-102.compute-1.amazonaws.com:5432/de3h0jbprur7d8", "bctthbkxfsapcr", "vAik0XnXrICB1SMxcCZOUQTF1L");
 		
 		return connect;
 	}
@@ -25,7 +28,7 @@ public class EZPZDao {
 
 	public static String[] getData(String query) throws Exception {
 		Statement statement = getStatement();
-		ResultSet resultSet = statement.executeQuery("select * from ezpz.recipes where Meal = '" + query + "'");
+		ResultSet resultSet = statement.executeQuery("select * from recipes where \"Meal\" = '" + query + "'");
 		
 		String[] info = new String[4];
 		while(resultSet.next()){
@@ -41,9 +44,9 @@ public class EZPZDao {
 
 	public static String[] getNutrition(String query) throws Exception{
 		Statement statement = getStatement();
-		ResultSet resultSet = statement.executeQuery("select * from ezpz.nutrition where Meat = '" + query + "'");
+		ResultSet resultSet = statement.executeQuery("select * from nutrition where \"Veggie\" = '" + query + "'");
 
-		String[] recipes = new String[5];
+		String[] recipes = new String[6];
 		while(resultSet.next()){
 			
 			recipes[0] =resultSet.getString("Name");
@@ -51,6 +54,7 @@ public class EZPZDao {
 			recipes[2] =resultSet.getString("Carbs");
 			recipes[3] =resultSet.getString("Fiber");
 			recipes[4] =resultSet.getString("Calories");
+			recipes[5] =resultSet.getString("Veggie");
 		}
 		return recipes;
 	}

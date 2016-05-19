@@ -89,7 +89,7 @@
 					</h2>
 					<%
 						String[] meals = new String[4];
-						String[] nutrition = new String[5];
+						String[] nutrition = new String[6];
 						String meal = (String) request.getAttribute("meal");
 						meals = EZPZDao.getData(meal);
 						String veggie = meals[2];
