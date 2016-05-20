@@ -61,7 +61,7 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="index.html">Home</a></li>
+				<li><a href="Index.html">Home</a></li>
 
 				<li><a href="blog.html">Blog</a></li>
 				<li><a href="recipes.html">Recipes</a></li>
@@ -85,7 +85,7 @@
 				</div>
 				<div class="col-lg-12 text-center">
 					<h2>
-						Meal <br> <small>A Good Replacement Meal Would Is:</small>
+						Meal <br> <small>A Good Replacement Meal Would Be:</small>
 					</h2>
 					<%
 						String[] meals = new String[4];
